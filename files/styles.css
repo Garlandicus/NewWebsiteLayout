@@ -1,0 +1,146 @@
+body{
+	width:1300px;
+	margin:auto;
+	background-color: #00143D;
+	color: #ffffff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+img{
+	box-shadow: 5px 5px 5px #333333;
+	margin-right:20px;
+	margin-bottom:10px;
+}
+
+li{
+	position:relative;
+	left:20px;
+}
+
+.header{
+	padding-top:30px;
+	padding-left:20px;
+	font-size: 42px;
+}
+
+.musicPlayer{
+	margin:auto;
+	height:400px;
+	width:90%;
+}
+.menuBar{
+	height:50px;
+	background: -webkit-linear-gradient(#00143D, #707B92); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#00143D, #707B92); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#00143D, #707B92); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#00143D, #707B92); /* Standard syntax (must be last) */
+}
+
+.menuItem{
+	float:left;
+	padding:10px;
+	margin:5px;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+
+	height:30px;
+	background-color:#707B92;
+}
+
+.selected{
+	border-top:2px solid;
+
+}
+
+.menuItem:hover{
+	border-top:2px solid;
+}
+
+.mainBody{
+	padding-top:20px;
+	height:700px;
+	background-color: #707B92;
+	border-top:2px solid;
+	border-bottom:2px solid;
+}
+
+.enclosure{
+	
+	margin:20px;
+	padding:10px;
+}
+
+.boxed{
+	color:#000000;
+	background-color:#B8BDC8;
+	border:2px solid;
+	border-color:#A6AAB4;
+	border-radius:10px;
+
+	box-shadow: 5px 5px 5px #333333;
+}
+
+.text{
+ 	color:#000000;
+}
+
+.centered{
+	text-align:center;
+	display:inline-block;
+}
+
+.itemRow{
+	padding-left:50px;
+	padding-bottom:20px;
+	width:90%;
+	overflow:hidden;
+}
+
+.column50{
+	float:left;
+	height:100%;
+	width:50%;
+}
+
+.footer{
+	font-family:consolas;
+	margin-top:20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+	background-color: #707B92;
+	border:2px solid;
+	text-align:center;
+}
+
+.slideDown{
+	height:300px;
+	overflow:hidden;
+	transition: height 1s;
+}
+
+.hidden{
+	height:0px;
+	overflow:hidden;	
+	transition: height 1s;
+}
+
+.clickable{
+	transition: background-color 0.2s;
+}
+
+.clickable:hover{
+	background-color:#FFFFFF;
+}
+
+.itemDescription{
+	text-align: left;
+}
+
+.itemDescription a{
+	padding:10px;
+}
+
+.itemDescription b{
+	color:#000000;
+}
