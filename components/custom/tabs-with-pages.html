@@ -1,0 +1,52 @@
+<link rel="import" href="/components/polymer/polymer.html">
+<link rel="import" href="/components/core-toolbar/core-toolbar.html">
+<link rel="import" href="/components/paper-tabs/paper-tabs.html">
+<link rel="import" href="/components/core-pages/core-pages.html">
+
+<polymer-element name="tabs-with-pages">
+	<template>
+		<core-toolbar style="width:300px">
+			<paper-tabs id="tabs" selected="all" on-click="{{switchSelected}}" self-end>
+				<paper-tab name="1">Web</paper-tab>
+				<paper-tab name="2">Android</paper-tab>
+				<paper-tab name="3">PC</paper-tab>
+			</paper-tabs>
+		</core-toolbar>
+		<core-pages id="pages" selected="0">
+			<div>One</div>
+			<div>Two</div>
+			<div>Three</div>
+		</core-pages>
+		<style>
+			core-toolbar{
+				background: #03a9f4;
+				color:white;
+				border:solid 2px white;
+			}
+
+			#tabs {
+				width:100%;
+				margin:0;
+				-webkit-user-select: none;
+				-moz-user-select:none;
+				-ms-user-select:none;
+				user-select:none;
+			}
+
+			core-pages {
+				width: 300px;
+				height: 300px;
+				border: 2px solid white;
+				-webkit-user-select: none;
+				border-radius: 5px;
+			}
+		</style>
+	</template>
+	<script>
+		Polymer('tabs-with-pages', {
+			switchSelected: function() {
+		    	this.$.pages.selected=this.$.tabs.selected-1;
+		    }
+		});
+	</script>
+</polymer-element>

@@ -1,0 +1,33 @@
+<link rel="import" href="/components/polymer/polymer.html">
+
+<polymer-element name="my-element" attributes="owner color">
+	<template>
+		This is <b>{{owner}}</b>'s age-slider.
+		<b>{{name}}</b> lets me borrow it. He likes the color <span style="color:{{color}}">{{color}}</span>
+		I am  <b>{{age}}</b> years old.<br/>
+		<button on-click="{{setFocus}}">Set focus to text input</button>
+		<p><label for="ageInput">Age:"</label>
+		<input id="ageInput" type="range" value="{{age}}">
+		<label for="nameInput">Name:"</label>
+		<input id="nameInput" value="{{name}}" placeholder="Enter name..."</p>
+	</template>
+	<script>
+		Polymer('my-element', {
+			thing:"Shadow DOM ;)",
+			age:"22",
+			name:"Ryan",
+			nameChanged: function(){
+				if(this.name){
+					//Ensure name is capitalized
+					this.name = this.name[0].toUpperCase() + this.name.slice(1);
+				}
+				if(this.name.length > 15){
+					this.name = this.name.slice(0,15);
+				}
+			},
+			setFocus: function(){
+				this.$.nameInput.focus();
+			}
+		});
+	</script>
+</polymer-element>

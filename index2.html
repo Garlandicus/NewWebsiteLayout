@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Ryan Darge, Software Engineer</title>
+	<script src="./components/platform/platform.js"></script>
+	<link rel="import" href="./components/core-ajax/core-ajax.html">
+	<link rel="import" href="./components/font-roboto/roboto.html">
+
+	<link rel="import" href="./components/custom/tabs-with-pages.html">
+
+  	<link rel="import" href="./components/core-header-panel/core-header-panel.html">
+  	<link rel="import" href="./components/core-toolbar/core-toolbar.html">
+  	<link rel="import" href="./components/core-pages/core-pages.html">
+  	<link rel="import" href="./components/paper-tabs/paper-tabs.html">
+
+ 	<style>
+	html,body {
+		height: 100%;
+		margin: 0;
+		background-color: #e5e5e5;
+		font-family: 'RobotoDraft', sans-serif;
+	}
+	.container {
+		width: 80%;
+		margin: 50px auto;
+	}
+	@media (min-width: 481px) {
+		#tabs {
+			width: 200px;
+		}
+		.container {
+			width: 400px;
+		}
+	}
+
+	core-header-panel {
+		height: 100px;
+		overflow:auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	  </style>
+</head>
+
+<body>
+<core-ajax url="./json/sample.json" handleAs="json"></core-ajax>
+
+<!--=============Page body goes below this line================-->
+<core-header-panel>
+</core-header-panel>
+
+<tabs-with-pages layout vertical center>
+<!--TODO: When you get back, look up how to make tabs-with-pages take a variable number of tabs and pages with content-->
+</tabs-with-pages>
+
+</body>
+
+<script>
+	//Function binding for ajax
+	window.addEventListener('polymer-ready', function(e){
+
+		var ajax = document.querySelector('core-ajax');
+
+		ajax.addEventListener('core-response', function(e){
+			console.log(this.response);
+		});
+
+		ajax.go();
+	});
+	//Function binding for core-pages
+	var tabs = document.querySelector('paper-tabs');
+	var pages = document.querySelector('core-pages');
+	tabs.addEventListener('core-select', function() {
+		pages.selected = tabs.selected - 1;
+	});
+</script>
+</html>

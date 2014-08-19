@@ -1,4 +1,6 @@
 /Portfolio/
+/components/polymer-test-tools/
+**/test/
 
 # Windows image file caches
 Thumbs.db
