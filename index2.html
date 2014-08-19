@@ -15,51 +15,113 @@
   	<link rel="import" href="./components/paper-tabs/paper-tabs.html">
 
  	<style>
-	html,body {
-		height: 100%;
-		margin: 0;
-		background-color: #e5e5e5;
-		font-family: 'RobotoDraft', sans-serif;
-	}
-	.container {
-		width: 80%;
-		margin: 50px auto;
-	}
-	@media (min-width: 481px) {
-		#tabs {
-			width: 200px;
+		html,body {
+			height: 100%;
+			margin: 0;
+			background-color: #e5e5e5;
+			font-family: 'RobotoDraft', sans-serif;
 		}
 		.container {
-			width: 400px;
+			width: 80%;
+			margin: 50px auto;
 		}
-	}
+		@media (min-width: 481px) {
+			#tabs {
+				width: 200px;
+			}
+			.container {
+				width: 400px;
+			}
+		}
 
-	core-header-panel {
-		height: 100px;
-		overflow:auto;
-		-webkit-overflow-scrolling: touch;
-	}
+		core-header-panel {
+			max-width:1000px;
+			height:1000px;
+			width:auto;
+			margin:5px;
+		}
 
-	  </style>
+		.core-header{			
+			height:60px;
+			line-height:60px;
+			font-size:18px;
+			padding:0 10px;
+			background-color:#4f7dc9;
+			color:#FFF;
+		}
+
+		tabs-with-pages{
+			float:left;
+			padding:10px;
+			width:500px;
+		}
+
+		.content{
+			width:auto;
+		}
+
+		.bio{
+			min-width:350px;
+			max-width:500px;
+			padding:10px;
+			float:left;
+			width:400px;
+		}
+		
+	</style>
 </head>
 
-<body>
+<body unresolved>
 <core-ajax url="./json/sample.json" handleAs="json"></core-ajax>
 
 <!--=============Page body goes below this line================-->
 <core-header-panel>
-</core-header-panel>
+	<div class="core-header">Ryan Darge, Software Engineer</div>
+	<div class="content" horizontal wrap around-justified layout>
+		<div class="bio" flex>
+			<img style="float:right; padding:10px" src="./img/Darge.png"/>
+			<p>Hi! I'm Ryan Darge, CS student and software developer - web applications, database management, AI, and a couple little games here and there.</p>
+			<p>My interests include:</p>
+			<ul>
+				<li>Mobile App Development</li>
+				<li>Artificial Intelligence</li>
+				<li>Computer Vision</li>
+				<li>Machine Learning</li>
+				<li>Procedural Generation</li>
+				<li>Japanese</li>
+			</ul>
+			<p>I have studied computer science and programming since early high school, and since then I've expanded my knowledge and interests to encompass a wide variety of related fields, spending as much time as I can between classes designing programs for whatever great ideas happen to pass through my mind.</p>
+			<p>Take a look at the <a href="blog.html">development page</a> to see what's brewing, or check out my portfolio below to see what's done or shelved for now.</p>
+		</div>
 
-<tabs-with-pages layout vertical center>
-<!--TODO: When you get back, look up how to make tabs-with-pages take a variable number of tabs and pages with content-->
-</tabs-with-pages>
+
+		<tabs-with-pages>
+			<!--Tab Content-->
+			<paper-tab name="1">Web</paper-tab>
+			<paper-tab name="2">Android</paper-tab>
+			<paper-tab name="3">PC</paper-tab>
+			<!--Page Content-->
+			<div>
+				This is a sample content page. Please ignore this text.
+			</div>
+			<div>
+				This is a SAMPLE content page. Please ignore this text.
+			</div>
+			<div>
+				This is a sample CONTENT page. Please ignore this text.
+			</div>
+
+		</tabs-with-pages>
+
+	</div>
+</core-header-panel>
 
 </body>
 
 <script>
 	//Function binding for ajax
 	window.addEventListener('polymer-ready', function(e){
-
+		/*
 		var ajax = document.querySelector('core-ajax');
 
 		ajax.addEventListener('core-response', function(e){
@@ -67,12 +129,7 @@
 		});
 
 		ajax.go();
-	});
-	//Function binding for core-pages
-	var tabs = document.querySelector('paper-tabs');
-	var pages = document.querySelector('core-pages');
-	tabs.addEventListener('core-select', function() {
-		pages.selected = tabs.selected - 1;
+		*/
 	});
 </script>
 </html>

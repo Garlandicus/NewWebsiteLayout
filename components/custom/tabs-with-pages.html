@@ -1,21 +1,26 @@
+<!--
+
+	tabs-with-pages
+
+	This polymer element takes a number of paper-tab children and div children, and creates a pair of linked paper-tabs and core-pages. The pairing for each page and tab goes in order of each element presented. 
+
+-->
+
 <link rel="import" href="/components/polymer/polymer.html">
+<link rel="import" href="/components/core-selector/core-selector.html">
 <link rel="import" href="/components/core-toolbar/core-toolbar.html">
 <link rel="import" href="/components/paper-tabs/paper-tabs.html">
 <link rel="import" href="/components/core-pages/core-pages.html">
 
-<polymer-element name="tabs-with-pages">
+<polymer-element name="tabs-with-pages" selected="0" attributes="width">
 	<template>
-		<core-toolbar style="width:300px">
+		<core-toolbar style="width:{{width}}">
 			<paper-tabs id="tabs" selected="all" on-click="{{switchSelected}}" self-end>
-				<paper-tab name="1">Web</paper-tab>
-				<paper-tab name="2">Android</paper-tab>
-				<paper-tab name="3">PC</paper-tab>
+				<content select="paper-tab"></content>
 			</paper-tabs>
 		</core-toolbar>
 		<core-pages id="pages" selected="0">
-			<div>One</div>
-			<div>Two</div>
-			<div>Three</div>
+			<content select="div"></content>
 		</core-pages>
 		<style>
 			core-toolbar{
@@ -25,7 +30,7 @@
 			}
 
 			#tabs {
-				width:100%;
+				width:{{width}};
 				margin:0;
 				-webkit-user-select: none;
 				-moz-user-select:none;
@@ -34,16 +39,20 @@
 			}
 
 			core-pages {
-				width: 300px;
+				width:{{width}};
 				height: 300px;
 				border: 2px solid white;
 				-webkit-user-select: none;
 				border-radius: 5px;
 			}
 		</style>
+
 	</template>
 	<script>
 		Polymer('tabs-with-pages', {
+
+			width:"100%",
+
 			switchSelected: function() {
 		    	this.$.pages.selected=this.$.tabs.selected-1;
 		    }
