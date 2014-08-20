@@ -1,0 +1,74 @@
+<link rel="import" href="/components/polymer/polymer.html">
+<link rel="import" href="/components/core-ajax/core-ajax.html">
+<!-- 
+  `<post-service>` provides an API for reading lists of project descriptions
+  stored on the server. Based on the tutorial post-service polymer element 
+  (http://www.polymer-project.org/docs/start/tutorial.html)
+
+  `posts` returns the list of posts.
+
+  @element post-service
+  @demo 
+  @homepage rdarge.com
+-->
+
+<!--
+  An array of pic-description-link objects, with the following format:
+  [
+    {
+      "src": "img/source_img",
+      "title": "title_of_item",
+      "description": "description_of_item",
+      "link1": "github_link",
+      "link2": "direct_download"
+    },
+
+    ...
+
+  ]
+
+  
+  @attribute posts 
+  @type Array
+  @default []
+-->
+<polymer-element name="post-service" attributes="posts source">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="../json/{{source}}.json"
+      on-core-response="{{postsLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+  Polymer('post-service', {
+    created: function() {
+      this.posts = [];
+    },
+    postsLoaded: function() {
+      // Make a copy of the loaded data
+      this.posts = this.$.ajax.response.slice(0);
+    },
+    /** 
+     * Update the service with the current favorite value.
+     * (Two-way data binding updates the favorite value 
+     * stored locally.) If this was a real service, this
+     * method would do something useful.
+     * 
+     * @method setFavorite
+     * @param uid {Number} Unique ID for post.
+     * @param isFavorite {Boolean} True if the user marked this post as a favorite.
+     */
+    setFavorite: function(uid, isFavorite) {
+      // no service backend, just log the change
+      console.log('Favorite changed: ' + uid + ", now: " + isFavorite);
+    }
+  });
+  </script>
+</polymer-element>

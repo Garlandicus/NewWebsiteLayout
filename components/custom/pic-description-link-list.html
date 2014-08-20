@@ -1,0 +1,68 @@
+<link rel="import" href="/components/polymer/polymer.html">
+<link rel="import" href="/components/custom/post-service.html">
+<link rel="import" href="/components/custom/pic-description-link.html">
+<link rel="import" href="/components/paper-button/paper-button.html">
+
+<polymer-element name="pic-description-link-list" attributes="height width source">
+	<template>
+		<style>
+			:host {
+				display:block;
+				width:{{width}};
+			}
+			pic-description-link{
+				margin-bottom:10px;
+			}
+			paper-button.colored {
+				color: #4285f4;
+				fill: #4285f4;
+				margin-top:5px;
+				margin-right:10px;
+			}
+
+			paper-button.hidden{
+				display:none;
+			}
+
+			paper-button[raisedButton].colored {
+				background: #4285f4;
+				color: #fff;
+			}
+
+			paper-button[raisedButton].colored #ripple,
+			paper-button[raisedButton].colored::shadow #ripple {
+				color: #2a56c6;
+			}
+
+			paper-button[disabled]{
+
+			}
+
+		</style>
+		<post-service id="service" source="{{source}}" posts="{{posts}}">	</post-service>
+
+		<div layout vertical center>
+			<template repeat="{{post in posts}}">
+				<pic-description-link height="{{height}}" width="{{width}}" src="{{post.src}}">
+					<div class="description">
+						<b>{{post.title}}</b>
+						<i>{{post.description}}</i>
+					</div>
+					<div class="link" horizontal layout reverse>
+						<paper-button raisedButton class="{{post.link1Class}}" label="{{post.link1Label}}" onclick="{{post.link1}}"></paper-button>
+		    			<paper-button raisedButton class="{{post.link2Class}}"  label="{{post.link2Label}}" onclick="{{post.link2}}')"></paper-button>
+					</div>
+				</pic-description-link>
+			</template>
+		</div>
+	</template>
+	<script>
+	Polymer('pic-description-link-list', {
+		//Do nothing
+		height: "75px",
+		width: "100%",
+		source: "default"
+	});
+	</script>
+</polymer-element>
+

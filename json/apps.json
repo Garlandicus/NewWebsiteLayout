@@ -1,0 +1,40 @@
+[
+	{
+		"src": "/img/GoLthumb.png",
+		"title": "Game of Life",
+		"description": "An interactive cellular automaton simulation based on Conway's Game of Life",
+		
+		"link1": "window.open('http://github.com/Garlandicus/GameOfLife')",
+		"link1Label":"Github",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Android/GameofLife.apk')",
+		"link2Label":"APK",
+		"link2Class": "colored"
+	},
+	{
+		"src": "/img/ProjectileThumb.png",
+		"title": "Projectile Simulator",
+		"description": "Rudimentary projectile collision detection and simulation",
+		"link1": "window.open('http://github.com/Garlandicus/AndroidCanvas')",
+		"link1Label":"Github",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Android/AndroidCanvas.apk')",
+		"link2Label":"APK",
+		"link2Class": "colored"
+    },
+	{
+		"src": "/img/tbr.png",
+		"title": "DnD Character Manager",
+		"description": "A stand-alone tool to manage DnD character stats, growth, inventory, among other things. Early in development",
+		
+		"link1": "window.open('http://github.com/Garlandicus/AndroidDnDProfileMan')",
+		"link1Label":"Github",
+		"link1Class": "colored",
+
+		"link2": "alert('Coming Soon!')",
+		"link2Label":"APK",
+		"link2Class": "colored"
+    }
+]

@@ -1,0 +1,40 @@
+[
+	{
+		"src": "/img/slideshow.png",
+		"title": "Restaraunt Menu Slideshow",
+		"description": "A slideshow application with an integrated menu designed for use at touchscreen kiosks at restaraunts. Written in HTML/CSS/JS",
+
+		"link1": "window.open('/Portfolio/Web/WebMenuSlideshow/slideshow.html')",
+		"link1Label":"Live Demo",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Web/WebMenuSlideshow/slideshow.html')",
+		"link2Label":"Download",
+		"link2Class": "hidden"
+	},
+	{
+		"src": "/img/calendar.png",
+		"title": "Web Calendar",
+		"description": "A rudimentary calendar with appointment scheduling, written with HTML/CSS/Javascript",
+
+		"link1": "window.open('/Portfolio/Web/WebCalendar/calendar.html')",
+		"link1Label":"Live Demo",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Web/WebCalendar/calendar.html')",
+		"link2Label":"Download",
+		"link2Class": "hidden"
+    },
+	{
+		"src": "/img/tanks.png",
+		"title": "Tank Driving Simulation",
+		"description": "A small project using JQuery and Three.js allowing the user to drive small 3D tanks around in their browser/ Written with HTML/CSS/Javascript.",
+		"link1": "window.open('/Portfolio/Web/TanksWeb/member.html')",
+		"link1Label":"Live Demo",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Web/TanksWeb/member.html')",
+		"link2Label":"Download",
+		"link2Class": "hidden"
+    }
+]
