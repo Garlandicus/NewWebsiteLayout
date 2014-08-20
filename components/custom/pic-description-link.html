@@ -1,0 +1,28 @@
+<link rel="import" href="/components/polymer/polymer.html">
+<link rel="import" href="./components/paper-button/paper-button.html">
+
+<polymer-element name="pic-description-link" attributes="height width src">
+	<template>
+		<img width="{{height}}" height="{{height}}" src="{{src}}" />
+		<content id="description" select=".description"></content>
+		<content id="link" select=".link"></content>
+		<style>
+		img{
+			float:left;
+			margin-right:15px;
+		}
+		#link{
+			margin:10px;
+		}
+		</style>
+	</template>
+	<script>
+		Polymer('pic-description-link', {
+
+			width:"100%",
+			height:"75px",
+			src:"/img/tbr.png"
+		});
+		
+	</script>
+</polymer-element>

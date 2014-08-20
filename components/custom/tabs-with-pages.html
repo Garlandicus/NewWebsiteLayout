@@ -12,7 +12,7 @@
 <link rel="import" href="/components/paper-tabs/paper-tabs.html">
 <link rel="import" href="/components/core-pages/core-pages.html">
 
-<polymer-element name="tabs-with-pages" selected="0" attributes="width">
+<polymer-element name="tabs-with-pages" selected="0" attributes="width height">
 	<template>
 		<core-toolbar style="width:{{width}}">
 			<paper-tabs id="tabs" selected="all" on-click="{{switchSelected}}" self-end>
@@ -24,9 +24,12 @@
 		</core-pages>
 		<style>
 			core-toolbar{
-				background: #03a9f4;
+				background: #4f7dc9;
 				color:white;
 				border:solid 2px white;
+				box-shadow: 0px 5px 5px #888888;
+				border-top-right-radius:5px;
+				border-top-left-radius:5px;
 			}
 
 			#tabs {
@@ -39,11 +42,13 @@
 			}
 
 			core-pages {
+				background-color:#DDD;
 				width:{{width}};
-				height: 300px;
+				height: {{height}};				
 				border: 2px solid white;
 				-webkit-user-select: none;
 				border-radius: 5px;
+				box-shadow: 0px 5px 5px #888888;
 			}
 		</style>
 
@@ -52,6 +57,7 @@
 		Polymer('tabs-with-pages', {
 
 			width:"100%",
+			height:"500px",
 
 			switchSelected: function() {
 		    	this.$.pages.selected=this.$.tabs.selected-1;
