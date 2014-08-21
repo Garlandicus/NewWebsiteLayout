@@ -4,13 +4,13 @@
 		"title": "Restaraunt Menu Slideshow",
 		"description": "A slideshow application with an integrated menu designed for use at touchscreen kiosks at restaraunts. Written in HTML/CSS/JS",
 
-		"link1": "window.open('/Portfolio/Web/WebMenuSlideshow/slideshow.html')",
-		"link1Label":"Live Demo",
+		"link1": "window.open('https://github.com/Garlandicus/KibSlideMenu/')",
+		"link1Label":"Github",
 		"link1Class": "colored",
 
 		"link2": "window.open('/Portfolio/Web/WebMenuSlideshow/slideshow.html')",
-		"link2Label":"Download",
-		"link2Class": "hidden"
+		"link2Label":"Live Demo",
+		"link2Class": "colored"
 	},
 	{
 		"src": "/img/calendar.png",
