@@ -7,7 +7,6 @@
 -->
 
 <link rel="import" href="/components/polymer/polymer.html">
-<link rel="import" href="/components/platform/platform.js">
 <link rel="import" href="/components/core-selector/core-selector.html">
 <link rel="import" href="/components/core-toolbar/core-toolbar.html">
 <link rel="import" href="/components/paper-tabs/paper-tabs.html">
@@ -27,29 +26,23 @@
 			core-toolbar{
 				background: #4f7dc9;
 				color:white;
-				border:solid 2px white;
-				box-shadow: 0px 5px 5px #888888;
-				border-top-right-radius:5px;
-				border-top-left-radius:5px;
+				width:{{width}};
 			}
 
 			#tabs {
-				width:{{width}};
 				margin:0;
 				-webkit-user-select: none;
 				-moz-user-select:none;
 				-ms-user-select:none;
 				user-select:none;
+				width:{{width}};
 			}
 
 			core-pages {
 				background-color:#DDD;
+				-webkit-user-select: none;
 				width:{{width}};
 				height: {{height}};				
-				border: 2px solid white;
-				-webkit-user-select: none;
-				border-radius: 5px;
-				box-shadow: 0px 5px 5px #888888;
 			}
 
 		</style>
