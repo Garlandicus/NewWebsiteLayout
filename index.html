@@ -14,10 +14,12 @@
   	<link rel="import" href="./components/core-header-panel/core-header-panel.html">
   	<link rel="import" href="./components/core-icon-button/core-icon-button.html">
   	<link rel="import" href="./components/core-toolbar/core-toolbar.html">
+  	<link rel="import" href="./components/core-tooltip/core-tooltip.html">
   	<link rel="import" href="./components/core-pages/core-pages.html">
   	<link rel="import" href="./components/core-drawer-panel/core-drawer-panel.html">
   	<link rel="import" href="./components/paper-tabs/paper-tabs.html">
   	<link rel="import" href="./components/paper-button/paper-button.html">
+  	<link rel="import" href="./components/paper-input/paper-input.html">
   	<link rel="import" href="./components/paper-dialog/paper-dialog.html">
   	<link rel="import" href="./components/paper-dialog/paper-dialog-transition.html">
 
@@ -71,7 +73,6 @@
 
 		paper-dialog{
 			min-width:350px;
-
 		}
 
 		.content{
@@ -79,7 +80,7 @@
 		}
 
 		.bio{
-			min-width:350px;
+			min-width:450px;
 			max-width:500px;
 			padding:10px;
 			float:left;
@@ -121,8 +122,38 @@
 			position:fixed;
 			left:0px;
 			top:0px;
-			z-index:100;
 		}
+
+		paper-button{
+			color: #4285f4;
+			fill: #4285f4;
+			margin-top:5px;
+			margin-right:10px;
+		}
+
+		paper-button.colored {
+			background: #4285f4;
+			color: #fff;
+		}
+
+		paper-button[raisedButton].colored {
+
+		}
+
+		paper-button[raisedButton].colored #ripple,
+		paper-button[raisedButton].colored::shadow #ripple {
+			color: #2a56c6;
+		}
+
+		iframe{
+			height:600px;
+			min-width:750px;
+		}
+
+		paper-input{
+			margin-top:20px;
+		}
+
 	</style>
 </head>
 
@@ -131,14 +162,13 @@
 
 <!--=============Page body goes below this line================-->
 <container id="everything" vertical layout>
+	<!--button class="sidebarButton" onclick="document.querySelector('core-drawer-panel').togglePanel();">toggle drawer</button-->
 	<core-header-panel fit>
-		<button class="sidebarButton" onclick="document.querySelector('core-drawer-panel').togglePanel();">toggle drawer</button>
 		<div class="core-header" vertical center layout>
 			<div>Ryan Darge, Software Engineer</div>
-				
 			<div class="navicons">
 				<core-icon-button icon="mail" onClick="window.open('mailto:ryan.darge@gmail.com');"></core-icon-button>
-				<core-icon-button icon="settings-phone" onClick="toggleDialog('paper-dialog-transition-center')"></core-icon-button>
+				<core-icon-button icon="settings-phone" onClick="toggleDialog('contact')"></core-icon-button>
 				<core-icon-button src="/img/github.gif" onClick="window.open('http://github.com/Garlandicus');"></core-icon-button>
 				<core-icon-button src="/img/linkedin.png" onClick="window.open('https://www.linkedin.com/pub/ryan-darge/39/744/95a');"></core-icon-button>
 				<core-icon-button icon="google-plus" onClick="window.open('https://plus.google.com/u/0/113455705603504407488/posts');"></core-icon-button>
@@ -148,9 +178,23 @@
 			<core-drawer-panel responsiveWidth="750px">
 				<div main fit horizontal wrap center-justified layout>
 					<!--Info Dialog-->
-					<paper-dialog heading="Contact Information: Ryan Darge" transition="paper-dialog-transition-center" layout vertical center>
-						<paper-button label="More Info..." dismissive></paper-button>
+					<paper-dialog id="contact" backdrop heading="Contact Information" transition="paper-dialog-transition-center" layout vertical center>
+						<div layout vertical center>
+							<!--span>Click a button to copy to clipboard</span-->
+							<div style="margin-top:20px"layout horizontal>
+								<paper-button raisedButton class="colored" onclick="setText('+1(203) 482-8113')" label="Phone"></paper-button>
+								<paper-button raisedButton class="colored" onclick="setText('ryan.darge@gmail.com')" label="Email"></paper-button>
+								<paper-button raisedButton class="colored" onclick="setText('+1(203) 744-9482')" label="Google Voice"></paper-button>
+							</div>
+							<paper-input id="copyInput" floatingLabel label="Click a button above"></paper-input>
+						</div>
 					    <paper-button label="Close" affirmative autofocus></paper-button>
+					</paper-dialog>
+					<!--Resume Dialog-->
+					<paper-dialog id="resume" backdrop transition="paper-dialog-transition-center" layout vertical center>
+						<iframe src="https://docs.google.com/document/d/1ikhNb52S1tLmiuUhHZHbPNmuSxOZkCMyAA-is16lBaA/pub?embedded=true"></iframe>
+					    <paper-button label="Close" affirmative autofocus></paper-button>
+					    <paper-button label="Download" affirmative onclick="window.open('https://docs.google.com/document/d/1ikhNb52S1tLmiuUhHZHbPNmuSxOZkCMyAA-is16lBaA/edit?usp=sharing')"></paper-button>
 					</paper-dialog>
 
 					<!--Bio details-->
@@ -159,15 +203,19 @@
 						<p>Hi! I'm Ryan Darge, CS student and software developer - web applications, database management, AI, and a couple little games here and there.</p>
 						<p>My interests include:</p>
 						<ul>
-							<li>Mobile App Development</li>
+							<li>Software Development <i>(Java, C++, C#, HTML/CSS/JS)</i></li>
+							<li>Mobile App Development (Java)</li>
+							<li>Japanese</li>
+						</ul>
+						And I'd like to learn more about the following topics:
+						<ul>
 							<li>Artificial Intelligence</li>
 							<li>Machine Learning</li>
 							<li>Procedural Generation</li>
 							<li>Computer Vision</li>
-							<li>Japanese</li>
 						</ul>
 						<p>I have studied computer science and programming since early high school, and since then I've expanded my knowledge and interests to encompass a wide variety of related fields, spending as much time as I can between classes designing programs for whatever new ideas happen to pass through my mind.</p>
-						<p>Take a look at the <a href="blog.html">development page</a> to see what's brewing, or check out my portfolio below to see what's done or shelved for now.</p>
+						<p>Take a look at the <core-tooltip position="top" label='Coming soon!'><a href="#">development page</a></core-tooltip> to see what's brewing, or check out my portfolio on this page to see what's done or shelved for now.</p>
 					</div>
 
 					<!--Previous Work-->
@@ -196,13 +244,17 @@
 					</tabs-with-pages>
 
 				</div>
-				<div drawer></div>
+				<div drawer layout vertical left-justified>
+					<paper-button raisedButton class="colored" label="Resume" onClick="toggleDialog('resume')"></paper-button>
+					<paper-button raisedButton label="Under Construction!"></paper-button>
+					<paper-button raisedButton label="Check back soon!"></paper-button>
+				</div>
 			</core-drawer-panel>	
 		</div>
 	</core-header-panel>
 	<div class="core-footer" horizontal around-justified layout>
-		<div>Welcome to the footer</div>
-		<div>Have a <a href="">link!</a></div>
+		<div>Welcome to the footer.</div>
+		<div>Thanks for checking out my site!</div>
 	</div>
 </container>
 
@@ -223,9 +275,16 @@
 
 	});
 
-	function toggleDialog(transition) {
-      var dialog = document.querySelector('paper-dialog[transition=' + transition + ']');
+	function toggleDialog(id) {
+      var dialog = document.querySelector('paper-dialog[id='+id+']');
       dialog.toggle();
+    }
+
+    function setText(id) {
+      var input = document.querySelector('paper-input[id="copyInput"]');
+      input.value=id;
+      input.label="CTRL-C to copy!"
+      setTimeout(function(){input.setSelectionRange(0,input.value.length);},50);
     }
 </script>
 </html>
