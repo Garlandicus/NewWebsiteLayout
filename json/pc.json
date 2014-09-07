@@ -1,0 +1,28 @@
+[
+	{
+		"src": "/img/java.png",
+		"title": "Timekeeping Manager",
+		"description": "A swing-based stand-alone application designed to manage timekeeping for a small business, written in Java. In development. ",
+
+		"link1": "window.open('https://github.com/Garlandicus/Timekeeping-Program')",
+		"link1Label":"Github",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Web/WebMenuSlideshow/slideshow.html')",
+		"link2Label":"Live Demo",
+		"link2Class": "hidden"
+	},
+	{
+		"src": "/img/Server.png",
+		"title": "Minecraft Dungeon Instance Manager",
+		"description": "A basic serverside CraftBukkit plugin for Minecraft that is designed to manage instance-based dungeons for multiplayer roleplaying. Written in Java.",
+
+		"link1": "window.open('https://github.com/Garlandicus/MCDungeonTool')",
+		"link1Label":"Github",
+		"link1Class": "colored",
+
+		"link2": "window.open('/Portfolio/Web/WebCalendar/calendar.html')",
+		"link2Label":"Download",
+		"link2Class": "hidden"
+    }
+]
