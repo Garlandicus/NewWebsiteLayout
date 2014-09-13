@@ -8,7 +8,7 @@
 		"link1Label":"Github",
 		"link1Class": "colored",
 
-		"link2": "window.open('/Portfolio/Web/WebMenuSlideshow/slideshow.html')",
+		"link2": "window.open('')",
 		"link2Label":"Live Demo",
 		"link2Class": "hidden"
 	},
@@ -21,7 +21,20 @@
 		"link1Label":"Github",
 		"link1Class": "colored",
 
-		"link2": "window.open('/Portfolio/Web/WebCalendar/calendar.html')",
+		"link2": "window.open('')",
+		"link2Label":"Download",
+		"link2Class": "hidden"
+    }
+    {
+		"src": "/img/java.png",
+		"title": "OpenProcessing Portfolio",
+		"description": "A collection of older fun applets I made using the Processing development environment. Written in the Processing flavor of Java.",
+
+		"link1": "window.open('http://www.openprocessing.org/user/4966')",
+		"link1Label":"Profile",
+		"link1Class": "colored",
+
+		"link2": "window.open('')",
 		"link2Label":"Download",
 		"link2Class": "hidden"
     }
