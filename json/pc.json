@@ -15,7 +15,7 @@
 	{
 		"src": "/img/Server.png",
 		"title": "Minecraft Dungeon Instance Manager",
-		"description": "A basic serverside CraftBukkit plugin for Minecraft that is designed to manage instance-based dungeons for multiplayer roleplaying. Written in Java.",
+		"description": "A basic server-side CraftBukkit plugin for Minecraft that is designed to manage instance-based dungeons for multiplayer roleplaying. Written in Java.",
 
 		"link1": "window.open('https://github.com/Garlandicus/MCDungeonTool')",
 		"link1Label":"Github",
@@ -24,11 +24,11 @@
 		"link2": "window.open('')",
 		"link2Label":"Download",
 		"link2Class": "hidden"
-    }
+    },
     {
-		"src": "/img/java.png",
+		"src": "/img/Processing.png",
 		"title": "OpenProcessing Portfolio",
-		"description": "A collection of older fun applets I made using the Processing development environment. Written in the Processing flavor of Java.",
+		"description": "A collection of older, fun applets I made using the Processing development environment. Written in the Processing flavor of Java.",
 
 		"link1": "window.open('http://www.openprocessing.org/user/4966')",
 		"link1Label":"Profile",

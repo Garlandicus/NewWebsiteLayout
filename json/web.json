@@ -1,8 +1,8 @@
 [
 	{
 		"src": "/img/slideshow.png",
-		"title": "Restaraunt Menu Slideshow",
-		"description": "A slideshow application with an integrated menu designed for use at touchscreen kiosks at restaraunts. Written in HTML/CSS/JS",
+		"title": "Restaurant Menu Slideshow",
+		"description": "A slideshow application with an integrated menu designed for use at touchscreen kiosks at restaurants. Written in HTML/CSS/JS",
 
 		"link1": "window.open('https://github.com/Garlandicus/KibSlideMenu/')",
 		"link1Label":"Github",

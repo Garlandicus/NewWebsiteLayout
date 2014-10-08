@@ -175,11 +175,24 @@
 		<div class="core-header" vertical center layout>
 			<div>Ryan Darge, Software Engineer</div>
 			<div class="navicons">
-				<core-icon-button icon="mail" onClick="window.open('mailto:ryan.darge@gmail.com');"></core-icon-button>
-				<core-icon-button icon="settings-phone" onClick="toggleDialog('contact')"></core-icon-button>
-				<core-icon-button src="/img/github.gif" onClick="window.open('http://github.com/Garlandicus');"></core-icon-button>
-				<core-icon-button src="/img/linkedin.png" onClick="window.open('https://www.linkedin.com/pub/ryan-darge/39/744/95a');"></core-icon-button>
-				<core-icon-button icon="google-plus" onClick="window.open('https://plus.google.com/u/0/113455705603504407488/posts');"></core-icon-button>
+				<core-tooltip position="bottom" label='Email me!'>
+					<core-icon-button icon="mail" onClick="window.open('mailto:ryan.darge@gmail.com');"></core-icon-button>
+				</core-tooltip>
+				<core-tooltip position="bottom" label='Contact Information'>
+					<core-icon-button icon="settings-phone" onClick="toggleDialog('contact')"></core-icon-button>
+				</core-tooltip>
+				<core-tooltip position="bottom" label='Github'>
+					<core-icon-button src="/img/github.gif" onClick="window.open('http://github.com/Garlandicus');"></core-icon-button>
+				</core-tooltip>
+				<core-tooltip position="bottom" label='Stack Overflow'>
+					<core-icon-button src="/img/stackoverflow.png" onClick="window.open('https://careers.stackoverflow.com/cv/employer/244686');"></core-icon-button>
+				</core-tooltip>
+				<core-tooltip position="bottom" label='LinkedIn'>
+					<core-icon-button src="/img/linkedin.png" onClick="window.open('https://www.linkedin.com/pub/ryan-darge/39/744/95a');"></core-icon-button>
+				</core-tooltip>
+				<core-tooltip position="bottom" label='Google+'>
+					<core-icon-button icon="google-plus" onClick="window.open('https://plus.google.com/u/0/113455705603504407488/posts');"></core-icon-button>
+				</core-tooltip>
 			</div>
 		</div>
 		<div class="content">
@@ -272,6 +285,8 @@
 </body>
 
 <script>
+	
+
 	//Function binding for ajax
 	window.addEventListener('polymer-ready', function(e){
 		/*
